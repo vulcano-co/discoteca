@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Discoteca</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <!--     Fonts and icons     -->
+  <link rel="icon" type="image/png" href="https://i.pinimg.com/originals/b8/2a/31/b82a3155be62bb202981e3bf5649bb87.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <!-- Material Kit CSS -->
+  <link href="assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="wrapper ">
+    <div class="sidebar">
+      <!--
+      Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+      Tip 2: you can also add an image using data-image tag
+  -->
+      <div class="logo">
+        <img src="disco.png" width="100%" height="auto">
+      </div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class="nav-item active  ">
+            <a class="nav-link" href="template.html">
+              <img class="material-icons"src="Home.png" width="25px" height="auto">
+              <p>Home</p>
+            </a>
+          </li>
+          <li class="nav-item active  ">
+            <a class="nav-link" href="artistas-pg.html">
+              <img class="material-icons"src="microfone.png" width="25px" height="auto">
+              <p>Artistas</p>
+            </a>
+          </li>
+          <li class="nav-item active  ">
+            <a class="nav-link" href="albuns-pg.html">
+              <img class="material-icons"src="cd.png" width="25px" height="auto">
+              <p>Álbuns</p>
+            </a>
+          </li>
+          <!-- your sidebar here -->
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " style="padding-right: 30px;">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <a class="navbar-brand" href="javascript:;">Home</a>
+          </div>
+        </div>
+        <input type="text" placeholder="Buscar álbum" style="color: #6d00a3;  background-color:transparent;
+        border: 1px #6d00a3 solid;border-radius:5px;">
+      </nav>
+      <!-- End Navbar -->
+      <div class="content">
+        <div class="container-fluid">
+          <!-- your content here -->
+          <div class="container">
+            <h1>Álbuns</h1>
+
+        </di>
+        
+        
+        
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Álbuns</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Artista</th>
+                <th scope="col">Classificação</th>
+                <th scope="col">Formato</th> 
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td><img src="https://upload.wikimedia.org/wikipedia/pt/b/bf/A_Night_at_the_Opera_Queen.jpg" alt="" height="80px" width="80px"></td>
+                <td>A Night at the Opera</td>
+                <td>Queen</td>
+                <td>⭐</td>
+                <td>cd</td>
+                
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td><img src="https://upload.wikimedia.org/wikipedia/pt/1/19/Pabllo_Vittar_-_Vai_Passar_Mal.jpeg" alt="" height="80px" width="80px"></td>
+                <td>Vai Passar Mal</td>
+                <td>Pablo Vitar</td>
+                <td>⭐⭐⭐⭐⭐</td>
+                <td>Vinil</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td><img src="https://images-na.ssl-images-amazon.com/images/I/71vhgO8D%2ByL._AC_SX679_.jpg" alt="" height="80px" width="80px"></td>
+                <td>Midnight Memories</td>
+                <td>One Direction</td>
+                <td>⭐⭐⭐⭐</td>
+                <td>Vinil   </td>
+              </tr>
+              <th scope="row">4</th>
+                <td><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/49b8eb84-0644-42ca-b22f-3a1208e2aa98/ddiulc3-4e00352f-2724-47da-94cb-8cf91e7f2982.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvNDliOGViODQtMDY0NC00MmNhLWIyMmYtM2ExMjA4ZTJhYTk4XC9kZGl1bGMzLTRlMDAzNTJmLTI3MjQtNDdkYS05NGNiLThjZjkxZTdmMjk4Mi5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ._B55YmhlXOl4j6ygqLdJUeDmp3ovFg-TjOUIO321BOw" alt="" height="80px" width="80px"></td>
+                <td>Lover</td>
+                <td>Taylor Swift</td>
+                <td>⭐⭐⭐</td>
+                <td>cd </td>
+              </tr>
+        
+              <th scope="row">4</th>
+              <td><a href="sgtpepper.html"><img src="https://upload.wikimedia.org/wikipedia/en/5/50/Sgt._Pepper%27s_Lonely_Hearts_Club_Band.jpg" alt="" height="80px" width="80px"></a></td>
+              <td><a href="sgtpepper.html">SGT. Pepper's Lon</a></td>
+              <td>The Beatles</td>
+              <td>⭐⭐⭐⭐⭐</td>
+              <td>Vinil </td>
+            </tr>
+            <th scope="row">4</th>
+            <td><a href="abbey.html"><img src="https://upload.wikimedia.org/wikipedia/pt/3/3d/Abbey_Road.jpg" alt="" height="80px" width="80px"></a></td>
+            <td><a href="abbey.html">Abbey Road</a></td>
+            <td>The Beatles</td>
+            <td>⭐⭐⭐⭐⭐</td>
+            <td>cd </td>
+          </tr>
+              
+              
+            </tbody>
+          </table>
+        
+          <button type="button" class="btn btn-primary btn-lg btn-block">Cadastrar álbum</button>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container-fluid">
+          <nav class="float-left">
+            <ul>
+              <li>
+                <a href="https://www.creative-tim.com">
+                  Creative Tim
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="copyright float-right">
+            &copy;
+            <script>
+              document.write(new Date().getFullYear())
+            </script>, made with <i class="material-icons">favorite</i> by
+            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
+          </div>
+          <!-- your footer here -->
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+
+</html>
