@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{%block title%}
+Discoteca-Artista
+{% endblock title %}
+
+
+{%block content%}
+Cadastrar
+<div class="container">
+    <form action="" method="POST">
+        <label for="nome">Nome do Programador:</label>
+        <input type="text" name="nome" id="nome" class="form-control" placeholder="Jose" required=>
+        <br>
+        <label for="exp">Experiencia de mercado:</label>
+        <input type="number" name="experiencia" id="exp" class="form-control" placeholder="em anos" required>
+        <br>
+        <input type="submit" value="Cadastrar!" class="btn btn-primary">
+    </form>
+</div>
+
+
+{% endblock %}

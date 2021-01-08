@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{%block title%}
+Discoteca-Artista
+{% endblock title %}
+
+
+{%block content%}
+
+<div class="d-grid gap-2">
+    <a href="{{url_for('artista.cadastrar')}}"> <button class="btn btn-primary" type="button">Cadastrar Artista</button></a>
+
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Artista</th>
+        <th scope="col">Nome</th>
+        <th scope="col">País</th>
+        <th scope="col">Genero Musical</th>
+        <th scope="col">Álbuns</th> 
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td><img src="https://studiosol-a.akamaihd.net/tb/letras-blog/wp-content/uploads/2020/04/a11f11e-Queen-1024x810.jpg" alt="" height="80px" width="80px"></td>
+        <td>Queen</td>
+        <td>Reino Unido</td>
+        <td>Rock</td>
+        <td>A Night at the Opera</td>
+        
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td><img src="https://i1.sndcdn.com/artworks-000209028253-cpm62m-t500x500.jpg" alt="" height="80px" width="80px"></td>
+        <td>Pablo Vittar</td>
+        <td>Brasil</td>
+        <td>Pop</td>
+        <td>Vai Passar Mal</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td><img src="https://data.whicdn.com/images/52109381/original.png" alt="" height="80px" width="80px"></td>
+        <td>One Direction</td>
+        <td>Reino Unido</td>
+        <td>Pop</td>
+        <td>Midnight Memories  </td>
+      </tr>
+      <th scope="row">4</th>
+        <td><img src="https://studiosol-a.akamaihd.net/letras/500x500/fotos/1/1/f/2/11f2c2bb07e6deda5a61e8a72af2c7fa.jpg" alt="" height="80px" width="80px"></td>
+        <td>Taylor Swift</td>
+        <td>Estados Unidos</td>
+        <td>Pop</td>
+        <td>Lover</td>
+      </tr>
+
+      <th scope="row">4</th>
+      <td><img src="https://i.pinimg.com/originals/a8/6f/03/a86f031e59955d5f76df3a0c4a06aa4a.jpg" alt="" height="80px" width="80px"></td>
+      <td>The Beatles</td>
+      <td>Reino Unido</td>
+      <td>Rock</td>
+      <td><a href="abbey.html">Abbey_Road</a><p><a href="sgtpepper.html">SGT. Pepper's Lon</a></p></td>
+    </tr>
+      
+    </tbody>
+  </table>
+
+
+{% endblock %}
