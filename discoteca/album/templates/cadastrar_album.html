@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{%block title%}
+Cadastrar Album
+{% endblock title %}
+
+
+{%block content%}
+Cadastrar
+<div class="container">
+    <form action="" method="POST">
+        <label for="nome">Nome do Album:</label>
+        <input type="text" name="nome" id="nome" class="form-control" placeholder="Thriller" required=>
+        <br>
+        <label for="ano">Ano de Lançamento:</label>
+        <input type="number" name="ano" id="ano" class="form-control" placeholder="2020" required=>
+        <br>
+        <label for="img">Imagem:</label>
+        <input type="text" name="img" id="img" class="form-control" placeholder="link" required=>
+        <br>
+        <label for="duracao">Duração:</label>
+        <input type="number" name="duracao" id="duracao" class="form-control" placeholder="3:00" required=>
+        <br>
+        <label for="genero_musical">Gênero</label>
+        <input type="text" name="genero_musical" id="genero_musical" class="form-control" placeholder="Rock" required=>
+        <br>
+        <label for="idioma">Idioma:</label>
+        <input type="text" name="idioma" id="idioma" class="form-control" placeholder="Inglês" required=>
+        <br>
+        <label for="formato">Formato:</label>
+        <input type="text" name="formato" id="formato" class="form-control" placeholder="Vinil" required=>
+        <br>
+        <label for="avaliacao">Avaliação:</label>
+        <input type="number" name="avaliacao" id="avaliacao" class="form-control" placeholder="5" required=>
+        <br>
+        <input type="submit" value="Cadastrar!" class="btn btn-primary">
+    </form>
+</div>
+
+
+{% endblock %}

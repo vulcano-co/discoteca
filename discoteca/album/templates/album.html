@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{%block title%}
+Discoteca-Artista
+{% endblock title %}
+
+
+{%block content%}
+<!-- Segue abaixo a div do botão de cadastro de albuns -->
+<div class="d-grid gap-2">
+    <a href="{{url_for('album.cadastrar')}}"><button class="btn btn-primary" type="button">Cadastrar Á   lbum</button></a>
+  </div>
+
+
+  
+<!-- Segue abaixo A tabela -->
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Álbuns</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Ano</th>
+        <th scope="col">Artista</th>
+        <th scope="col">Genero</th>
+        <th scope="col">Duração</th>
+        <th scope="col">Classificação</th>
+        <th scope="col">Formato</th> 
+      </tr>
+    </thead>
+    <tbody>
+
+      {% for album in albuns %}
+      <tr>
+        <th scope="row">2</th>
+        <td><img src={{album.img}} alt="" height="80px" width="80px"></td>
+        <td>{{album.nome}}</td>
+        <td>{{album.ano}}</td>
+        <td>ARTISTA</td>
+        <td>{{album.genero_musical}}</td>
+        <td>{{album.duracao}}</td>
+        <td>{{album.avalicao}}</td>
+        <td>{{album.formato}}</td>
+      </tr>
+      {% endfor %}
+      <!-- <tr>
+        <th scope="row">3</th>
+        <td><img src="https://images-na.ssl-images-amazon.com/images/I/71vhgO8D%2ByL._AC_SX679_.jpg" alt="" height="80px" width="80px"></td>
+        <td>Midnight Memories</td>
+        <td>Ano</td>
+        <td>One Direction</td>
+        <td>Genero</td>
+        <td>Duração</td>
+        <td>⭐⭐⭐⭐</td>
+        <td>Vinil   </td>
+      </tr> -->
+      
+      
+    </tbody>
+  </table>
+
+{% endblock %}
