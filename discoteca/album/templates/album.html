@@ -33,30 +33,18 @@ Discoteca-Artista
 
       {% for album in albuns %}
       <tr>
-        <th scope="row">2</th>
+        <th scope="row">{{album.id}}</th>
         <td><img src={{album.img}} alt="" height="80px" width="80px"></td>
         <td>{{album.nome}}</td>
         <td>{{album.ano}}</td>
         <td>ARTISTA</td>
         <td>{{album.genero_musical}}</td>
         <td>{{album.duracao}}</td>
-        <td>{{album.avalicao}}</td>
+        <td>{% set x = album.avaliacao %}{% for i in range(x) %}⭐{% endfor %}</td>
         <td>{{album.formato}}</td>
       </tr>
       {% endfor %}
-      <!-- <tr>
-        <th scope="row">3</th>
-        <td><img src="https://images-na.ssl-images-amazon.com/images/I/71vhgO8D%2ByL._AC_SX679_.jpg" alt="" height="80px" width="80px"></td>
-        <td>Midnight Memories</td>
-        <td>Ano</td>
-        <td>One Direction</td>
-        <td>Genero</td>
-        <td>Duração</td>
-        <td>⭐⭐⭐⭐</td>
-        <td>Vinil   </td>
-      </tr> -->
-      
-      
+         
     </tbody>
   </table>
 

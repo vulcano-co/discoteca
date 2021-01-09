@@ -6,7 +6,8 @@ artista = Blueprint('artista',__name__, template_folder='templates')
 
 @artista.route('/')
 def index():
-    return render_template('artistas.html')
+    artistas = Artista.query.all()
+    return render_template('artistas.html', artistas=artistas)
 
 @artista.route('/cadastrar',methods=['GET','POST'])
 def cadastrar():

@@ -24,15 +24,18 @@ Discoteca-Artista
       </tr>
     </thead>
     <tbody>
+      {% for artista in artistas %}
       <tr>
-        <th scope="row">1</th>
-        <td><img src="https://studiosol-a.akamaihd.net/tb/letras-blog/wp-content/uploads/2020/04/a11f11e-Queen-1024x810.jpg" alt="" height="80px" width="80px"></td>
-        <td>Queen</td>
-        <td>Reino Unido</td>
-        <td>Rock</td>
-        <td>A Night at the Opera</td>
+        <th scope="row">{{artista.id}}</th>
+        <td><img src={{artista.img}} alt="" height="80px" width="80px"></td>
+        <td>{{artista.nome}}</td>
+        <td>{{artista.pais}}</td>
+        <td>{{artista.genero_musical}}</td>
+        <td>ALBUNS</td>
         
       </tr>
+      {% endfor %}
+<!--       
       <tr>
         <th scope="row">2</th>
         <td><img src="https://i1.sndcdn.com/artworks-000209028253-cpm62m-t500x500.jpg" alt="" height="80px" width="80px"></td>
@@ -63,7 +66,7 @@ Discoteca-Artista
       <td>Reino Unido</td>
       <td>Rock</td>
       <td><a href="abbey.html">Abbey_Road</a><p><a href="sgtpepper.html">SGT. Pepper's Lon</a></p></td>
-    </tr>
+    </tr> -->
       
     </tbody>
   </table>
