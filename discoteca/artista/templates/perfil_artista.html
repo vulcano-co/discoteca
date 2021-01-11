@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Perfil - {{artista.nome}}
+{% endblock title %}
+
+{% block content %}
+<!-- <h1>{{artista.nome}}</h1>
+<h4>{{artista.pais}}</h4> -->
+
+<div class="container tudo">
+    <div style="margin: auto; text-align: center; padding: 8px 20px;">
+        <img src={% if artista.img %}{{artista.img}}{% else %}"https://rlv.zcache.com.br/poster_icone_de_cantor_logotipo_karaoke-ra36fd3c510f849e4a54f2f0be43297fc_ixh_8byvr_540.jpg"{% endif %} alt="https://rlv.zcache.com.br/poster_icone_de_cantor_logotipo_karaoke-ra36fd3c510f849e4a54f2f0be43297fc_ixh_8byvr_540.jpg" style="height:400px; width: 400px;">
+        
+        <h2 style="margin-top: 20px; color: #6d00a3"><b>{{artista.nome}}</b></h2>
+        <div id="info" style="color: #4f4f4f;">
+        <h3>Pais: {{artista.pais}}</h3>
+        <h3>Gênero: {{artista.genero_musical}}</h3>
+        </div>
+        <br>
+        <table class="table">
+            <h2>Albuns Produzidos:</h2>
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Ano</th>
+                <th scope="col">img</th>
+                <th scope="col">duração</th>
+                <th scope="col">genero_musical</th>
+                <th scope="col">idioma</th>
+                <th scope="col">formato</th>
+                <th scope="col">avaliacao</th>
+              </tr>
+            </thead>
+            <tbody>
+            <!-- {% for album in artista.albums %}
+              <tr>
+                <th scope="row">{{album.id}}</th>
+                <td><a href="{{url_for('album.perfil', _id=album.id)}}">{{album.nome}}</a></td>
+                <td>{{album.tipo}}</td>
+                <td><a href="{{url_for('album.editar_album',_id=album.id)}}"><i class="fas fa-edit"></i></a>
+                    <a href="{{url_for('album.excluir_album',_id=album.id)}}"><i class="fas fa-trash"></i></a>
+                </td>
+              </tr>
+            {% endfor %} -->
+            </tbody>
+          </table>
+
+
+
+    </div>    
+</div>    
+
+
+
+
+{% endblock content %}

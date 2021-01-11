@@ -27,4 +27,10 @@ def cadastrar():
         return redirect(url_for('artista.index'))
 
 
-    return render_template('cadastrar_artistas.html')     
+    return render_template('cadastrar_artistas.html')
+
+
+@artista.route('/perfil/<_id>', methods=['GET'])
+def perfil(_id):
+    artista_query = Artista.query.get_or_404(_id)
+    return render_template('perfil_artista.html', artista=artista_query)

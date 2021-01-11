@@ -38,3 +38,8 @@ def cadastrar():
 
 
     return render_template('cadastrar_album.html')     
+
+@album.route('/perfil/<_id>', methods=['GET'])
+def perfil(_id):
+    album = Album.query.get_or_404(_id)
+    return render_template('perfil_album.html', album=album)

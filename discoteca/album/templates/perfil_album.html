@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Album - {{album.nome}}
+{% endblock title %}
+
+{% block content %}
+<!-- <h1>{{album.nome}}</h1>
+<h4>{{album.pais}}</h4> -->
+
+<div class="container tudo">
+    <div style="margin: auto; text-align: center; padding: 8px 20px;">
+        <img src={% if album.img %}{{album.img}}{% else %}"https://cdn.onlinewebfonts.com/svg/img_515447.png"{% endif %} alt="https://cdn.onlinewebfonts.com/svg/img_515447.png" style="height:400px; width: 400px;">
+        
+        <h2 style="margin-top: 20px; color: #6d00a3"><b>{{album.nome}}</b></h2>
+        <div id="info" style="color: #4f4f4f;">
+            <h3>Autoria: ARTISTA</h3>
+            <h3>Lançado em {{album.ano}}</h3>
+            <h3>Gênero: {{album.genero_musical}}</h3>
+            <h3>Idioma: {{album.idioma}}</h3>
+            <h3>Duração: {{album.duracao}}</h3>
+            <h3>Tipo: {{album.tipo}}</h3>
+            <h3>Avaliação: {% set x = album.avaliacao %}{% for i in range(x) %}⭐{% endfor %}</h3>
+        </div>
+
+    </div>    
+</div>    
+
+
+
+
+{% endblock content %}
