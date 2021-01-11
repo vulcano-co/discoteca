@@ -7,6 +7,8 @@ Discoteca-Artista
 
 {%block content%}
 
+
+
 <div class="row">
   <form class="col-sm-12" method="GET">   
     <div class="pull-right">
@@ -52,7 +54,7 @@ Discoteca-Artista
         <td><img src="{% if album.img %}{{album.img}}{% else %}https://cdn.onlinewebfonts.com/svg/img_515447.png{% endif %}" alt="NULL IMG"  style="object-fit: cover; height: 80px; width: 80px;"></td>
         <td><a href="{{url_for('album.perfil',_id=album.id)}}">{{album.nome}}</a></td>
         <td>{{album.ano}}</td>
-        <td>ARTISTA</td>
+        <td>{%if album.artistas%}{%for artista in album.artistas%}{{artista.nome}} {%endfor%}{%else%}--{%endif%}</td>
         <td>{{album.genero_musical}}</td>
         <td>{{album.duracao}}</td>
         <td>{% set x = album.avaliacao %}{% for i in range(x) %}⭐{% endfor %}</td>

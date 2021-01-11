@@ -14,17 +14,19 @@ Album - {{album.nome}}
         
         <h2 style="margin-top: 20px; color: #6d00a3"><b>{{album.nome}}</b></h2>
         <div id="info" style="color: #4f4f4f;">
-            <h3>Autoria: ARTISTA</h3>
+            <h3>Autoria: {%if album.artistas%}{%for artista in album.artistas%}{{artista.nome}} {%endfor%}{%else%}--{%endif%}</h3>
             <h3>Lançado em {{album.ano}}</h3>
             <h3>Gênero: {{album.genero_musical}}</h3>
             <h3>Idioma: {{album.idioma}}</h3>
             <h3>Duração: {{album.duracao}}</h3>
-            <h3>Tipo: {{album.tipo}}</h3>
+            <h3>Formato: {{album.formato}}</h3>
             <h3>Avaliação: {% set x = album.avaliacao %}{% for i in range(x) %}⭐{% endfor %}</h3>
         </div>
 
         <td>
             <a href="{{url_for('album.editar',_id=album.id)}}"><i class="fas fa-edit"></i></a>
+            <a href="{{url_for('album.excluir',_id=album.id)}}"><i class="fas fa-user-minus"></i></a>
+            <a href="{{url_for('album.associar_artista',_id=album.id)}}"><i class="fas fa-plus-square"></i></a>
         </td>
         
     </div>    
@@ -34,5 +36,3 @@ Album - {{album.nome}}
 
 
 {% endblock content %}
-<!-- <a href="{{url_for('album.excluir',_id=album.id)}}"><i class="fas fa-user-minus"></i></a>
-<a href="{{url_for('album.associar_artista',_id=album.id)}}"><i class="fas fa-plus-square"></i></a> -->

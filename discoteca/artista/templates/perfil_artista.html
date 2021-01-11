@@ -20,43 +20,48 @@ Perfil - {{artista.nome}}
         <br>
         <td>
           <a href="{{url_for('artista.editar',_id=artista.id)}}"><i class="fas fa-edit"></i></a>
+          <a href="{{url_for('artista.excluir',_id=artista.id)}}"><i class="fas fa-user-minus"></i></a>
         </td>
         <br>
         <table class="table">
-            <h2>Albuns Produzidos:</h2>
-            <thead>
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Ano</th>
-                <th scope="col">img</th>
-                <th scope="col">duração</th>
-                <th scope="col">genero_musical</th>
-                <th scope="col">idioma</th>
-                <th scope="col">formato</th>
-                <th scope="col">avaliacao</th>
-              </tr>
-            </thead>
-            <tbody>
-            <!-- {% for album in artista.albums %}
+          <h2>Albuns Produzidos:</h2>
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Ano</th>
+              <th scope="col">genero_musical</th>
+              <th scope="col">duração</th>
+              <th scope="col">avaliacao</th>
+              <th scope="col">formato</th>
+              <th scope="col">Opcoes</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for album in artista.albuns %}
               <tr>
                 <th scope="row">{{album.id}}</th>
-                <td><a href="{{url_for('album.perfil', _id=album.id)}}">{{album.nome}}</a></td>
-                <td>{{album.tipo}}</td>
-                <td><a href="{{url_for('album.editar_album',_id=album.id)}}"><i class="fas fa-edit"></i></a>
-                    <a href="{{url_for('album.excluir_album',_id=album.id)}}"><i class="fas fa-trash"></i></a>
+                <td><a href="{{url_for('album.perfil',_id=album.id)}}">{{album.nome}}</a></td>
+                <td>{{album.ano}}</td>
+                <td>{{album.genero_musical}}</td>
+                <td>{{album.duracao}}</td>
+                <td>{% set x = album.avaliacao %}{% for i in range(x) %}⭐{% endfor %}</td>
+                <td>{{album.formato}}</td>
+                <td><a href="{{url_for('album.editar',_id=album.id)}}"><i class="fas fa-edit"></i></a>
+                  <a href="{{url_for('album.excluir',_id=album.id)}}"><i class="fas fa-trash"></i></a>
                 </td>
               </tr>
-            {% endfor %} -->
+          {% endfor %}
             </tbody>
           </table>
           
-
-
-    </div>    
-</div>    
-
-
-
-
-{% endblock content %}
+          
+          
+        </div>    
+      </div>    
+      
+      
+      
+      
+      {% endblock content %}
+      <!-- <a href="{{url_for('album.associar_artista',_id=album.id)}}"><i class="fas fa-plus-square"></i></a> -->

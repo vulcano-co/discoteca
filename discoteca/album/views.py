@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from discoteca import db
 from discoteca.album.models import Album
+from discoteca.artista.models import Artista
 from datetime import time
 
 album = Blueprint('album',__name__, template_folder='templates')
@@ -23,11 +24,13 @@ def cadastrar():
         ano             = request.form['ano']
         img             = request.form['img']
         duracaoCru         = request.form['duracao'].split(":")
-        duracao = time(
-            int(duracaoCru[0]),
-            int(duracaoCru[1]),
-            int(duracaoCru[2]) 
-        ) 
+        h=0
+        m=0
+        s=0
+        h=h+int(duracaoCru[0])
+        m=m+int(duracaoCru[1])
+        s=s+int(duracaoCru[2])
+        duracao = time(h,m,s) 
 
         genero_musical  = request.form['genero_musical']
         idioma          = request.form['idioma']
@@ -82,7 +85,27 @@ def editar(_id):
      
 
 
-# @album.route('/excluir/<_id>', methods=['GET','POST'])
+@album.route('/excluir/<_id>', methods=['GET','POST'])
+def excluir(_id):
+    album = Album.query.get_or_404(_id)
+    if request.method == 'POST':
+        db.session.delete(album)
+        db.session.commit()        
+        return redirect(url_for('album.index'))
+    
+    return render_template('excluir_album.html', album=album)
 
+@album.route('/associar_artista/<_id>', methods=['GET','POST'])
+def associar_artista(_id):
+    album  = Album.query.get_or_404(_id)
+    artistas = Artista.query.all()
 
-# @album.route('/associar_artista/<_id>', methods=['GET','POST'])
+    if request.method == 'POST':
+        id_artista = request.form['id_artista']
+        artista_associado = Artista.query.get_or_404(id_artista)
+        album.artistas.append(artista_associado)
+        db.session.commit()
+
+        return redirect(url_for('album.perfil',_id=album.id))
+
+    return render_template('associar_artista.html', album=album, artistas=artistas)

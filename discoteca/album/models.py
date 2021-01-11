@@ -1,4 +1,5 @@
 from discoteca import app, db
+from discoteca.artista.models import ArtistaAlbum
 
 
 
@@ -14,3 +15,4 @@ class Album(db.Model):
     idioma          = db.Column(db.String(30), nullable=False)
     formato         = db.Column(db.String(30), nullable=False)
     avaliacao       = db.Column(db.Integer, nullable=False)
+    artistas        = db.relationship("Artista", secondary=ArtistaAlbum, back_populates="albuns")

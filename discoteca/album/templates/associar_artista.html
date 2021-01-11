@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{%block title%}
+Associar Artista
+{% endblock title %}
+
+
+{%block content%}
+<h2>Deseja associar {{album.nome}} a qual artista?</h2>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Artista</th>
+        <th scope="col">Nome</th>
+        <th scope="col">País</th>
+        <th scope="col">Genero Musical</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for artista in artistas %}
+      <tr>
+        <th scope="row">{{artista.id}}</th>
+        <td>
+          <img src="{% if artista.img %}{{artista.img}}{% else %}https://rlv.zcache.com.br/poster_icone_de_cantor_logotipo_karaoke-ra36fd3c510f849e4a54f2f0be43297fc_ixh_8byvr_540.jpg{% endif %}" alt="NULL IMG" style="height:80px; width: 80px; object-fit: cover;" >
+        </td>
+        <td>
+            <form action="" method="POST">
+                <input type="hidden" name="id_artista" value="{{artista.id}}">
+                <input type="submit" value="{{artista.nome}}" class="btn btn-primary">
+            </form>
+        </td>
+        <td>{{artista.pais}}</td>
+        <td>{{artista.genero_musical}}</td>
+      </tr>
+      {% endfor %}
+
+{% endblock %}

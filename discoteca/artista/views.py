@@ -50,3 +50,14 @@ def editar(_id):
         return redirect(url_for('artista.perfil', _id=artista.id))
 
     return render_template('editar_artistas.html', artista=artista)
+
+
+@artista.route('/excluir/<_id>', methods=['GET','POST'])
+def excluir(_id):
+    artista = Artista.query.get_or_404(_id)
+    if request.method == 'POST':
+        db.session.delete(artista)
+        db.session.commit()        
+        return redirect(url_for('artista.index'))
+    
+    return render_template('excluir_artista.html', artista=artista)
