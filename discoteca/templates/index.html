@@ -23,7 +23,7 @@ Discoteca - Home
           {% for artista in artistas %}
           <tr>
             <th scope="row">{{artista.id}}</th>
-            <td><img src={{artista.img}} width="100px" height="auto"></td>
+            <td><img src={% if artista.img %}{{artista.img}}{% else %}"https://rlv.zcache.com.br/poster_icone_de_cantor_logotipo_karaoke-ra36fd3c510f849e4a54f2f0be43297fc_ixh_8byvr_540.jpg"{% endif %} alt="https://rlv.zcache.com.br/poster_icone_de_cantor_logotipo_karaoke-ra36fd3c510f849e4a54f2f0be43297fc_ixh_8byvr_540.jpg" height="80px" width="80px"></td>
             <td>{{artista.nome}}</td>
             <td>
               <p>30</p>
@@ -61,7 +61,7 @@ Discoteca - Home
         <tbody>
           {% for album in albuns %}
           <tr>
-            <td><img src={{album.img}} alt="" height="80px" width="80px"></td>
+            <td><img src={% if album.img %}{{album.img}}{% else %}"https://cdn.onlinewebfonts.com/svg/img_515447.png"{% endif %} alt="https://cdn.onlinewebfonts.com/svg/img_515447.png" height="80px" width="80px"></td>
             <td>{{album.nome}}</td>
             <td>ARTISTA</td>
             <td>{% set x = album.avaliacao %}{% for i in range(x) %}⭐{% endfor %}</td>
