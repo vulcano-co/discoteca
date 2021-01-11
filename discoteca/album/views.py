@@ -23,13 +23,15 @@ def cadastrar():
         nome            = request.form['nome']
         ano             = request.form['ano']
         img             = request.form['img']
-        duracaoCru         = request.form['duracao'].split(":")
-        h=0
-        m=0
-        s=0
-        h=h+int(duracaoCru[0])
-        m=m+int(duracaoCru[1])
-        s=s+int(duracaoCru[2])
+        duracaoCru      = request.form['duracao'].split(":")
+        h=int(duracaoCru[0])
+        m=int(duracaoCru[1])
+        if len(duracaoCru) < 3:
+            s=0
+        else:
+            s=int(duracaoCru[2])
+
+
         duracao = time(h,m,s) 
 
         genero_musical  = request.form['genero_musical']
