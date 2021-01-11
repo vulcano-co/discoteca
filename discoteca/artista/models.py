@@ -8,4 +8,4 @@ class Artista(db.Model):
     nome            = db.Column(db.String(30), nullable=False)
     pais            = db.Column(db.String(30), nullable=False)
     genero_musical  = db.Column(db.String(30), nullable=False)
-    img             = db.Column(db.String(2083), nullable=False)
+    img             = db.Column(db.String(2083), nullable=True)

@@ -7,7 +7,7 @@ class Album(db.Model):
     id              = db.Column(db.Integer, primary_key=True)
     nome            = db.Column(db.String(30), nullable=False)
     ano             = db.Column(db.Integer, nullable=False)
-    img             = db.Column(db.String(2083), nullable=False)
+    img             = db.Column(db.String(2083), nullable=True)
     duracao         = db.Column(db.Integer)
     genero_musical  = db.Column(db.String(30), nullable=False)
     idioma          = db.Column(db.String(30), nullable=False)

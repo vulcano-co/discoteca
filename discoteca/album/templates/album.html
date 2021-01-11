@@ -8,7 +8,7 @@ Discoteca-Artista
 {%block content%}
 <!-- Segue abaixo a div do botão de cadastro de albuns -->
 <div class="d-grid gap-2">
-    <a href="{{url_for('album.cadastrar')}}"><button class="btn btn-primary" type="button">Cadastrar Á   lbum</button></a>
+    <a href="{{url_for('album.cadastrar')}}"><button class="btn btn-primary" type="button">Cadastrar Álbum</button></a>
   </div>
 
 
@@ -34,7 +34,7 @@ Discoteca-Artista
       {% for album in albuns %}
       <tr>
         <th scope="row">{{album.id}}</th>
-        <td><img src={{album.img}} alt="" height="80px" width="80px"></td>
+        <td><img src={% if album.img %}{{album.img}}{% else %}"https://cdn.onlinewebfonts.com/svg/img_515447.png"{% endif %} alt="https://cdn.onlinewebfonts.com/svg/img_515447.png" height="80px" width="80px"></td>
         <td>{{album.nome}}</td>
         <td>{{album.ano}}</td>
         <td>ARTISTA</td>
