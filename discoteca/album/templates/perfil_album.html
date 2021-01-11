@@ -23,6 +23,10 @@ Album - {{album.nome}}
             <h3>Avaliação: {% set x = album.avaliacao %}{% for i in range(x) %}⭐{% endfor %}</h3>
         </div>
 
+        <td>
+            <a href="{{url_for('album.editar',_id=album.id)}}"><i class="fas fa-edit"></i></a>
+        </td>
+        
     </div>    
 </div>    
 
@@ -30,3 +34,5 @@ Album - {{album.nome}}
 
 
 {% endblock content %}
+<!-- <a href="{{url_for('album.excluir',_id=album.id)}}"><i class="fas fa-user-minus"></i></a>
+<a href="{{url_for('album.associar_artista',_id=album.id)}}"><i class="fas fa-plus-square"></i></a> -->
