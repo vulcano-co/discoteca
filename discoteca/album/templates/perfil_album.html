@@ -10,7 +10,7 @@ Album - {{album.nome}}
 
 <div class="container tudo">
     <div style="margin: auto; text-align: center; padding: 8px 20px;">
-        <img src={% if album.img %}{{album.img}}{% else %}"https://cdn.onlinewebfonts.com/svg/img_515447.png"{% endif %} alt="https://cdn.onlinewebfonts.com/svg/img_515447.png" style="height:400px; width: 400px;">
+        <img src="{% if album.img %}{{album.img}}{% else %}https://cdn.onlinewebfonts.com/svg/img_515447.png{% endif %}" alt="NULL IMG" style="height:400px; width: 400px;">
         
         <h2 style="margin-top: 20px; color: #6d00a3"><b>{{album.nome}}</b></h2>
         <div id="info" style="color: #4f4f4f;">

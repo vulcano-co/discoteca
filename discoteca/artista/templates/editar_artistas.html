@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Editar {{artista.nome}}
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <form action="" method="POST">
+        <label for="nome">Nome do Artista:</label>
+        <input type="text" name="nome" id="nome" class="form-control" placeholder="Jose" value="{{artista.nome}}" required=>
+        <br>
+        <label for="genero_musical">Gênero</label>
+        <input type="text" name="genero_musical" id="genero_musical" class="form-control" placeholder="Rock" value="{{artista.genero_musical}}" required=>
+        <br>
+        <label for="pais">País</label>
+        <input type="text" name="pais" id="pais" class="form-control" placeholder="EUA" value="{{artista.pais}}" required=>
+        <br>
+        <label for="img">Imagem</label>
+        <input type="text" name="img" id="img" class="form-control" placeholder="link" value="{{artista.img}}">
+        <br>
+        <input type="submit" value="Confirmar Mudanças!" class="btn btn-primary">
+    </form>
+</div>
+{% endblock content %}
+

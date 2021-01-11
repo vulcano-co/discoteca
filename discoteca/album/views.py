@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from discoteca import db
 from discoteca.album.models import Album
+from datetime import time
 
 album = Blueprint('album',__name__, template_folder='templates')
 
@@ -21,7 +22,13 @@ def cadastrar():
         nome            = request.form['nome']
         ano             = request.form['ano']
         img             = request.form['img']
-        duracao         = request.form['duracao']
+        duracaoCru         = request.form['duracao'].split(":")
+        duracao = time(
+            int(duracaoCru[0]),
+            int(duracaoCru[1]),
+            int(duracaoCru[2]) 
+        ) 
+
         genero_musical  = request.form['genero_musical']
         idioma          = request.form['idioma']
         formato         = request.form['formato']
@@ -56,7 +63,12 @@ def editar(_id):
         album.nome            = request.form['nome']
         album.ano             = request.form['ano']
         album.img             = request.form['img']
-        album.duracao         = request.form['duracao']
+        duracaoCru         = request.form['duracao'].split(":")
+        album.duracao = time(
+            int(duracaoCru[0]),
+            int(duracaoCru[1]),
+            int(duracaoCru[2]) 
+        ) 
         album.genero_musical  = request.form['genero_musical']
         album.idioma          = request.form['idioma']
         album.formato         = request.form['formato']

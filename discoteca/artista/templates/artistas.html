@@ -27,7 +27,9 @@ Discoteca-Artista
       {% for artista in artistas %}
       <tr>
         <th scope="row">{{artista.id}}</th>
-        <td><img src={% if artista.img %}{{artista.img}}{% else %}"https://rlv.zcache.com.br/poster_icone_de_cantor_logotipo_karaoke-ra36fd3c510f849e4a54f2f0be43297fc_ixh_8byvr_540.jpg"{% endif %} alt="https://rlv.zcache.com.br/poster_icone_de_cantor_logotipo_karaoke-ra36fd3c510f849e4a54f2f0be43297fc_ixh_8byvr_540.jpg" height="80px" width="80px"></td>
+        <td>
+          <img src="{% if artista.img %}{{artista.img}}{% else %}https://rlv.zcache.com.br/poster_icone_de_cantor_logotipo_karaoke-ra36fd3c510f849e4a54f2f0be43297fc_ixh_8byvr_540.jpg{% endif %}" alt="NULL IMG" style="height:80px; width: 80px; object-fit: cover;" >
+        </td>
         <td><a href="{{url_for('artista.perfil',_id=artista.id)}}">{{artista.nome}}</a></td>
         <td>{{artista.pais}}</td>
         <td>{{artista.genero_musical}}</td>

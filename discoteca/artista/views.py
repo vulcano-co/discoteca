@@ -34,3 +34,19 @@ def cadastrar():
 def perfil(_id):
     artista_query = Artista.query.get_or_404(_id)
     return render_template('perfil_artista.html', artista=artista_query)
+
+@artista.route('/editar/<_id>', methods=['GET','POST'])
+def editar(_id):
+    artista = Artista.query.get_or_404(_id)
+
+    if request.method == 'POST':
+        artista.nome = request.form['nome']
+        artista.pais = request.form['pais']
+        artista.genero_musical = request.form['genero_musical']
+        artista.img = request.form['img']
+        
+        db.session.commit()
+
+        return redirect(url_for('artista.perfil', _id=artista.id))
+
+    return render_template('editar_artistas.html', artista=artista)

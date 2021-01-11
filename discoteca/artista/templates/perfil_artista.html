@@ -10,13 +10,17 @@ Perfil - {{artista.nome}}
 
 <div class="container tudo">
     <div style="margin: auto; text-align: center; padding: 8px 20px;">
-        <img src={% if artista.img %}{{artista.img}}{% else %}"https://rlv.zcache.com.br/poster_icone_de_cantor_logotipo_karaoke-ra36fd3c510f849e4a54f2f0be43297fc_ixh_8byvr_540.jpg"{% endif %} alt="https://rlv.zcache.com.br/poster_icone_de_cantor_logotipo_karaoke-ra36fd3c510f849e4a54f2f0be43297fc_ixh_8byvr_540.jpg" style="height:400px; width: 400px;">
+        <img src="{% if artista.img %}{{artista.img}}{% else %}https://rlv.zcache.com.br/poster_icone_de_cantor_logotipo_karaoke-ra36fd3c510f849e4a54f2f0be43297fc_ixh_8byvr_540.jpg{% endif %}" alt="NULL IMG" style="height:400px; width: 400px; object-fit: cover;" >
         
         <h2 style="margin-top: 20px; color: #6d00a3"><b>{{artista.nome}}</b></h2>
         <div id="info" style="color: #4f4f4f;">
         <h3>Pais: {{artista.pais}}</h3>
         <h3>Gênero: {{artista.genero_musical}}</h3>
         </div>
+        <br>
+        <td>
+          <a href="{{url_for('artista.editar',_id=artista.id)}}"><i class="fas fa-edit"></i></a>
+        </td>
         <br>
         <table class="table">
             <h2>Albuns Produzidos:</h2>
@@ -46,7 +50,7 @@ Perfil - {{artista.nome}}
             {% endfor %} -->
             </tbody>
           </table>
-
+          
 
 
     </div>    
