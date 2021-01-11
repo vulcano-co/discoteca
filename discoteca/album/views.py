@@ -6,8 +6,12 @@ album = Blueprint('album',__name__, template_folder='templates')
 
 @album.route('/')
 def index():
-  albuns = Album.query.all()
-  return render_template('album.html', albuns=albuns)
+    q = request.args.get('q')
+    if q:
+        albuns = Album.query.filter(Album.nome.contains(q))
+    else :
+        albuns = Album.query.all()
+    return render_template('album.html', albuns=albuns)
 
 
 
