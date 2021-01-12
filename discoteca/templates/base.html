@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="template">
 
 <head>
   <title>{% block title %}{% endblock title %}</title>
@@ -62,6 +62,12 @@
           <div class="navbar-wrapper">
             <a class="navbar-brand" href="{{url_for('home.index')}}">Discoteca - Made by Vulcano</a>
           </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation" onclick="toggleMenu()">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+          </button>
         </div>
       </nav>
       <!-- End Navbar -->
@@ -70,6 +76,7 @@
           <!-- your content here -->
           {% block content %}
           {% endblock content %}
+          <span class="a" style="z-index: 0;"></span>
         </div>
       </div>
       <footer class="footer">
@@ -99,5 +106,16 @@
 
 <!-- javascript -->
 {% block scripts %}
+<script type="text/javascript">
+  function toggleMenu(){
+      let template = document.querySelector('.template');
+      let navbar,toggler = document.querySelector('.navbar-toggler');
+      let a = document.querySelector('.a');
+      template.classList.toggle('nav-open');
+      navbar-toggler.classList.toggle('toggled');
+      a.classList.toggle('close-layer');
+      a.classList.toggle('visible');
+  }
+</script>
 {% endblock scripts %}
 </html>
