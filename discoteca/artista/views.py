@@ -33,7 +33,8 @@ def cadastrar():
 @artista.route('/perfil/<_id>', methods=['GET'])
 def perfil(_id):
     artista_query = Artista.query.get_or_404(_id)
-    return render_template('perfil_artista.html', artista=artista_query)
+    nAlbuns = len(artista_query.albuns)
+    return render_template('perfil_artista.html', artista=artista_query, nAlbuns=nAlbuns)
 
 @artista.route('/editar/<_id>', methods=['GET','POST'])
 def editar(_id):
