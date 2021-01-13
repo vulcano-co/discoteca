@@ -16,7 +16,7 @@ Discoteca - Home
             <th scope="col">#</th>
             <th scope="col">Foto</th>
             <th scope="col">Artista</th>
-            <th scope="col">Numero</th>
+            <th scope="col">Albuns</th>
           </tr>
         </thead>
         <tbody>
@@ -26,9 +26,10 @@ Discoteca - Home
             <td><img src="{% if artista.img %}{{artista.img}}{% else %}https://rlv.zcache.com.br/poster_icone_de_cantor_logotipo_karaoke-ra36fd3c510f849e4a54f2f0be43297fc_ixh_8byvr_540.jpg{% endif %}" alt="NULL IMG" style="object-fit: cover; height: 80px; width: 80px;"></td>
             <td>{{artista.nome}}</td>
             <td>
-              <p>30</p>
+              <p>{{numeroDeCadastros[loop.index0]}}</p>
               </td>
           </tr>
+          
           {% endfor %}
         </tbody>
       </table>

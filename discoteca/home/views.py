@@ -9,5 +9,17 @@ home = Blueprint('home',__name__)
 @home.route('/')
 def index():
     artistas = Artista.query.all()
+    numAlb = [(0,0)] * len(artistas)
+    for i in range(len(artistas)):
+        numAlb[i] = (len(artistas[i].albuns),artistas[i].id)
+    maisAlbCad = sorted(numAlb, reverse=True)
+    top5=list()
+    top5Num=list()
+
+    for i in range(5):
+        top5.append(Artista.query.get(maisAlbCad[i][1]))
+        top5Num.append(maisAlbCad[i][0])
+    print(top5Num)
+
     albuns = Album.query.order_by(Album.id.desc()).limit(5)
-    return render_template('index.html', albuns=albuns, artistas=artistas)
+    return render_template('index.html', albuns=albuns, artistas=top5, numeroDeCadastros=top5Num)
