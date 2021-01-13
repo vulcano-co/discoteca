@@ -64,7 +64,7 @@ Discoteca - Home
           <tr>
             <td><img src="{% if album.img %}{{album.img}}{% else %}https://cdn.onlinewebfonts.com/svg/img_515447.png{% endif %}" alt="NULL IMG"  style="object-fit: cover; height: 80px; width: 80px;"></td>
             <td>{{album.nome}}</td>
-            <td>ARTISTA</td>
+            <td>{% if album.artistas %} {{album.artistas[0].nome}} {% else %}--{% endif%}</td>
             <td>{% set x = album.avaliacao %}{% for i in range(x) %}⭐{% endfor %}</td>
             <td>{{album.formato}}</td>
             
