@@ -8,28 +8,40 @@ Album - {{album.nome}}
 <!-- <h1>{{album.nome}}</h1>
 <h4>{{album.pais}}</h4> -->
 
-<div class="container tudo">
-    <div style="margin: auto; text-align: center; padding: 8px 20px;">
-        <img src="{% if album.img %}{{album.img}}{% else %}https://cdn.onlinewebfonts.com/svg/img_515447.png{% endif %}" alt="NULL IMG" style="height:400px; width: 400px;">
+<div class="card mb-3">
+                
+                    <div class="card-header card-header-primary text-center" style="font-weight: 800;">
+                        <h4 class="card-title">
+                            <h1>{{album.nome}}</h1>
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row" style="margin: auto; text-align: center; padding: 8px 20px;">
+                            <div class="col-sm">
+                             <img src="{% if album.img %}{{album.img}}{% else %}https://cdn.onlinewebfonts.com/svg/img_515447.png{% endif %}" alt="NULL IMG" style="width: 100%; max-width: 400px;">
+                            </div>
+                            <div class="col-sm">                         
+                            <ul id="info" style="color: #4f4f4f;" class="list-group">
+                                <li class="list-group-item">Autoria: {%if album.artistas%}{%for artista in album.artistas%}{{artista.nome}} {%endfor%}{%else%}--{%endif%}</li>
+                                <li class="list-group-item">Lançado em {{album.ano}}</li>
+                                <li class="list-group-item">Gênero: {{album.genero_musical}}</li>
+                                <li class="list-group-item">Idioma: {{album.idioma}}</li>
+                                <li class="list-group-item">Duração: {{album.duracao}}</li>
+                                <li class="list-group-item">Formato: {{album.formato}}</li>
+                                <li class="list-group-item">Avaliação: {% set x = album.avaliacao %}{% for i in range(x) %}⭐{% endfor %}</li>
+                            </ul> 
+                            <td>
+                                <a href="{{url_for('album.editar',_id=album.id)}}"><i class="fas fa-edit"></i></a>
+                                <a href="{{url_for('album.excluir',_id=album.id)}}"><i class="fas fa-user-minus"></i></a>
+                                <a href="{{url_for('album.associar_artista',_id=album.id)}}"><i class="fas fa-plus-square"></i></a>
+                            </td>
+                             </div> 
+                        </div>
+                    
+                    </div>
+                    <!-- /.login-card-body -->
+                </div>
         
-        <h2 style="margin-top: 20px; color: #6d00a3"><b>{{album.nome}}</b></h2>
-        <div id="info" style="color: #4f4f4f;">
-            <h3>Autoria: {%if album.artistas%}{%for artista in album.artistas%}{{artista.nome}} {%endfor%}{%else%}--{%endif%}</h3>
-            <h3>Lançado em {{album.ano}}</h3>
-            <h3>Gênero: {{album.genero_musical}}</h3>
-            <h3>Idioma: {{album.idioma}}</h3>
-            <h3>Duração: {{album.duracao}}</h3>
-            <h3>Formato: {{album.formato}}</h3>
-            <h3>Avaliação: {% set x = album.avaliacao %}{% for i in range(x) %}⭐{% endfor %}</h3>
-        </div>
-
-        <td>
-            <a href="{{url_for('album.editar',_id=album.id)}}"><i class="fas fa-edit"></i></a>
-            <a href="{{url_for('album.excluir',_id=album.id)}}"><i class="fas fa-user-minus"></i></a>
-            <a href="{{url_for('album.associar_artista',_id=album.id)}}"><i class="fas fa-plus-square"></i></a>
-        </td>
-        
-    </div>    
 </div>    
 
 
