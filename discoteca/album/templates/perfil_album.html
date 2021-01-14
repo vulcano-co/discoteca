@@ -10,9 +10,9 @@ Album - {{album.nome}}
 
 <div class="card mb-3">
                 
-                    <div class="card-header card-header-primary text-center" style="font-weight: 800;">
+                    <div class="card-header card-header-primary text-center" >
                         <h4 class="card-title">
-                            <h1>{{album.nome}}</h1>
+                            <h1 style="font-size: 4vw;">{{album.nome}}</h1>
                         </h4>
                     </div>
                     <div class="card-body">
@@ -31,9 +31,9 @@ Album - {{album.nome}}
                                 <li class="list-group-item">Avaliação: {% set x = album.avaliacao %}{% for i in range(x) %}⭐{% endfor %}</li>
                             </ul> 
                             <td>
-                                <a href="{{url_for('album.editar',_id=album.id)}}"><i class="fas fa-edit"></i></a>
-                                <a href="{{url_for('album.excluir',_id=album.id)}}"><i class="fas fa-user-minus"></i></a>
-                                <a href="{{url_for('album.associar_artista',_id=album.id)}}"><i class="fas fa-plus-square"></i></a>
+                                <a href="{{url_for('album.editar',_id=album.id)}}"><button class="btn btn-primary" ><i class="fas fa-edit"></i></button></a>
+                                <a href="{{url_for('album.excluir',_id=album.id)}}"><button class="btn btn-primary" ><i class="fa fa-minus-square"></i></button></a>
+                                <a href="{{url_for('album.associar_artista',_id=album.id)}}"><button class="btn btn-primary" ><i class="fa fa-plus-square"></i></button></a>
                             </td>
                              </div> 
                         </div>
