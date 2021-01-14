@@ -50,8 +50,7 @@ def cadastrar():
         db.session.add(album)
         db.session.commit()
 
-        return redirect(url_for('album.index'))
-
+        return redirect(url_for('album.index'))  
 
     return render_template('cadastrar_album.html')     
 
@@ -106,6 +105,14 @@ def associar_artista(_id):
         id_artista = request.form['id_artista']
         artista_associado = Artista.query.get_or_404(id_artista)
         album.artistas.append(artista_associado)
+
+        nAlbuns = len(artista_associado.albuns) + 1
+
+        somaNotas = album.avaliacao
+        for album in artista_associado.albuns:
+            somaNotas += album.avaliacao
+
+        artista_associado.media = somaNotas/nAlbuns
         db.session.commit()
 
         return redirect(url_for('album.perfil',_id=album.id))

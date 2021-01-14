@@ -13,4 +13,5 @@ class Artista(db.Model):
     pais            = db.Column(db.String(30), nullable=False)
     genero_musical  = db.Column(db.String(30), nullable=False)
     img             = db.Column(db.String(2083), nullable=True)
+    media           = db.Column(db.Float, default=0.0)
     albuns          = db.relationship("Album", secondary=ArtistaAlbum, back_populates="artistas")

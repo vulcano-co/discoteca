@@ -16,6 +16,7 @@ Perfil - {{artista.nome}}
         <div id="info" style="color: #4f4f4f;">
         <h3>Pais: {{artista.pais}}</h3>
         <h3>Gênero: {{artista.genero_musical}}</h3>
+        <h3>Classificação: {{ artista.media | round(1, 'floor') }}</h3>
         </div>
         <br>
         <td>

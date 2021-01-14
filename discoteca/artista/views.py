@@ -16,11 +16,12 @@ def cadastrar():
         pais = request.form['pais']
         genero_musical = request.form['genero_musical']
         img = request.form['img']
+        media = 0.0
         
         artista = Artista(nome=nome,
                           pais=pais,
                           genero_musical=genero_musical,
-                          img=img)
+                          img=img,media=media)
         db.session.add(artista)
         db.session.commit()
 
@@ -32,8 +33,10 @@ def cadastrar():
 
 @artista.route('/perfil/<_id>', methods=['GET'])
 def perfil(_id):
+    
     artista_query = Artista.query.get_or_404(_id)
     nAlbuns = len(artista_query.albuns)
+    
     return render_template('perfil_artista.html', artista=artista_query, nAlbuns=nAlbuns)
 
 @artista.route('/editar/<_id>', methods=['GET','POST'])

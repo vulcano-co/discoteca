@@ -21,5 +21,7 @@ def index():
         top5Num.append(maisAlbCad[i][0])
     print(top5Num)
 
+    #query_melhorClassificacao = Artista.query.order_by(desc(Artista.media))
+
     albuns = Album.query.order_by(Album.id.desc()).limit(5)
     return render_template('index.html', albuns=albuns, artistas=top5, numeroDeCadastros=top5Num)
