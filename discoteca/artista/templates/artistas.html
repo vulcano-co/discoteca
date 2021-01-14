@@ -34,46 +34,12 @@ Discoteca-Artista
         <td>{{artista.pais}}</td>
         <td>{{artista.genero_musical}}</td>
         <td>
-            {% for album in artista.albuns %}
-           <p><a href="{{url_for('album.perfil',_id=album.id)}}">{{album.nome}}</a></p>
-            {% endfor %}
-         </td>
+          {% for x in range(2) %}  <!-- NUMERO DE ALBUNS A SERES EXIBIDOS: 3 -->   
+            {% if artista.albuns[x] %}<p><a href="{{url_for('album.perfil',_id=artista.albuns[x].id)}}">{{artista.albuns[x].nome}}</a></p>{% endif %}
+          {% endfor %}
+        </td>
       </tr>
       {% endfor %}
-
-<!--       
-      <tr>
-        <th scope="row">2</th>
-        <td><img src="https://i1.sndcdn.com/artworks-000209028253-cpm62m-t500x500.jpg" alt="" height="80px" width="80px"></td>
-        <td>Pablo Vittar</td>
-        <td>Brasil</td>
-        <td>Pop</td>
-        <td>Vai Passar Mal</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td><img src="https://data.whicdn.com/images/52109381/original.png" alt="" height="80px" width="80px"></td>
-        <td>One Direction</td>
-        <td>Reino Unido</td>
-        <td>Pop</td>
-        <td>Midnight Memories  </td>
-      </tr>
-      <th scope="row">4</th>
-        <td><img src="https://studiosol-a.akamaihd.net/letras/500x500/fotos/1/1/f/2/11f2c2bb07e6deda5a61e8a72af2c7fa.jpg" alt="" height="80px" width="80px"></td>
-        <td>Taylor Swift</td>
-        <td>Estados Unidos</td>
-        <td>Pop</td>
-        <td>Lover</td>
-      </tr>
-
-      <th scope="row">4</th>
-      <td><img src="https://i.pinimg.com/originals/a8/6f/03/a86f031e59955d5f76df3a0c4a06aa4a.jpg" alt="" height="80px" width="80px"></td>
-      <td>The Beatles</td>
-      <td>Reino Unido</td>
-      <td>Rock</td>
-      <td><a href="abbey.html">Abbey_Road</a><p><a href="sgtpepper.html">SGT. Pepper's Lon</a></p></td>
-    </tr> -->
-      
     </tbody>
   </table></div>
 
