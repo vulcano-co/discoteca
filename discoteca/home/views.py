@@ -19,7 +19,7 @@ def index():
     for i in range(5):
         top5.append(Artista.query.get(maisAlbCad[i][1]))
         top5Num.append(maisAlbCad[i][0])
-    print(top5Num)
+    
 
     #query_melhorClassificacao = Artista.query.order_by(desc(Artista.media))
 

@@ -33,10 +33,14 @@ Discoteca-Artista
         <td><a href="{{url_for('artista.perfil',_id=artista.id)}}">{{artista.nome}}</a></td>
         <td>{{artista.pais}}</td>
         <td>{{artista.genero_musical}}</td>
-        <td>ALBUNS</td>
-        
+        <td>
+            {% for album in artista.albuns %}
+           <p><a href="{{url_for('album.perfil',_id=album.id)}}">{{album.nome}}</a></p>
+            {% endfor %}
+         </td>
       </tr>
       {% endfor %}
+
 <!--       
       <tr>
         <th scope="row">2</th>
