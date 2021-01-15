@@ -52,7 +52,7 @@ Discoteca-Artista
       <tr>
         <th scope="row">{{loop.index}}</th>
         <td><a href="{{url_for('album.perfil',_id=album.id)}}">
-          <img src="{% if album.img %}{{album.img}}{% else %}https://cdn.onlinewebfonts.com/svg/img_515447.png{% endif %}" alt="NULL IMG" onerror="this.onerror=null; this.src='https://cdn.onlinewebfonts.com/svg/img_515447.png'"  style="border-radius: 0.2rem; object-fit: cover; height: 80px; width: 80px;">
+          <img src="{% if album.img %}{{album.img}}{% else %}https://image.flaticon.com/icons/png/512/26/26805.png{% endif %}" alt="NULL IMG" onerror="this.onerror=null; this.src='https://image.flaticon.com/icons/png/512/26/26805.png'"  style="border-radius: 0.2rem; object-fit: cover; height: 80px; width: 80px;">
         </a></td>
         <td><a href="{{url_for('album.perfil',_id=album.id)}}">{{album.nome}}</a></td>
         <td>{{album.ano}}</td>

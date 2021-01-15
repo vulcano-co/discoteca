@@ -69,11 +69,11 @@ Discoteca - Home
           {% for album in albuns %}
           <tr>
             <td>
-              <a href="{{url_for('album.perfil',_id=album.id)}}"><img src="{{album.img}}" onerror="this.onerror=null; this.src='https\://cdn.onlinewebfonts.com/svg/img_515447.png'" alt="NULL IMG"  style="object-fit: cover; height: 80px; width: 80px;"></a>
+              <a href="{{url_for('album.perfil',_id=album.id)}}"><img src="{{album.img}}" onerror="this.onerror=null; this.src='https://image.flaticon.com/icons/png/512/26/26805.png'" alt="NULL IMG"  style="object-fit: cover; height: 80px; width: 80px;"></a>
               
             </td>
             <td><a href="{{url_for('album.perfil',_id=album.id)}}">{{album.nome}}</a></td>
-            <td>{% if album.artistas %} {{album.artistas[0].nome}} {% else %}--{% endif%}</td>
+            <td>{% if album.artistas %}<a href="{{url_for('artista.perfil',_id=album.artistas[0].id)}}"> {{album.artistas[0].nome}}</a> {% else %}--{% endif%}</td>
             <td>{% set x = album.avaliacao %}{% for i in range(x) %}⭐{% endfor %}</td>
             <td>{{album.formato}}</td>
             
