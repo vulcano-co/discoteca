@@ -7,62 +7,74 @@ Perfil - {{artista.nome}}
 {% block content %}
 <!-- <h1>{{artista.nome}}</h1>
 <h4>{{artista.pais}}</h4> -->
-
-<div class="container tudo">
-    <div style="margin: auto; text-align: center; padding: 8px 20px;">
-        <img src="{% if artista.img %}{{artista.img}}{% else %}https://rlv.zcache.com.br/poster_icone_de_cantor_logotipo_karaoke-ra36fd3c510f849e4a54f2f0be43297fc_ixh_8byvr_540.jpg{% endif %}" alt="NULL IMG" style="height:400px; width: 400px; object-fit: cover;" >
-        
-        <h2 style="margin-top: 20px; color: #6d00a3"><b>{{artista.nome}}</b></h2>
-        <div id="info" style="color: #4f4f4f;">
-        <h3>Pais: {{artista.pais}}</h3>
-        <h3>Gênero: {{artista.genero_musical}}</h3>
-        <h3>Classificação: {{'%0.2f'| format(Media|float)}}</h3> 
+<div class="card mb-3">
+                
+        <div class="card-header card-header-primary text-center" >
+            <h4 class="card-title">
+                <h1 style="font-size: min(30vw, 30px);font-weight: 700;">{{artista.nome}}</h1>
+            </h4>
         </div>
-        <br>
-        <td>
-          <a href="{{url_for('artista.editar',_id=artista.id)}}"><i class="fas fa-edit"></i></a>
-          <a href="{{url_for('artista.excluir',_id=artista.id)}}"><i class="fas fa-user-minus"></i></a>
-        </td>
-        <br>
-        <table class="table">
-          <h2>Albuns Produzidos: {{nAlbuns}}</h2>
-          <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Nome</th>
-              <th scope="col">Ano</th>
-              <th scope="col">genero_musical</th>
-              <th scope="col">duração</th>
-              <th scope="col">avaliacao</th>
-              <th scope="col">formato</th>
-              <th scope="col">Opcoes</th>
-            </tr>
-          </thead>
-          <tbody>
-          {% for album in artista.albuns %}
-              <tr>
-                <th scope="row">{{album.id}}</th>
-                <td><a href="{{url_for('album.perfil',_id=album.id)}}">{{album.nome}}</a></td>
-                <td>{{album.ano}}</td>
-                <td>{{album.genero_musical}}</td>
-                <td>{{album.duracao}}</td>
-                <td>{% set x = album.avaliacao %}{% for i in range(x) %}⭐{% endfor %}</td>
-                <td>{{album.formato}}</td>
-                <td><a href="{{url_for('album.editar',_id=album.id)}}"><i class="fas fa-edit"></i></a>
-                  <a href="{{url_for('album.excluir',_id=album.id)}}"><i class="fas fa-trash"></i></a>
-                </td>
-              </tr>
-          {% endfor %}
-            </tbody>
-          </table>
-          
-          
-          
-        </div>    
-      </div>    
+        <div class="card-body">
+            <div class="row" style="margin: auto; text-align: center; padding: 8px 20px;">
+                <div class="col-sm">
+                 <img src="{% if artista.img %}{{artista.img}}{% else %}https://rlv.zcache.com.br/poster_icone_de_cantor_logotipo_karaoke-ra36fd3c510f849e4a54f2f0be43297fc_ixh_8byvr_540.jpg{% endif %}" alt="NULL IMG" style="width: 100%; max-width: 400px;">
+                </div>
+                <div class="col-sm">                         
+                <ul id="info" style="color: #4f4f4f;" class="list-group">
+                    <li class="list-group-item">Pais: {{artista.pais}}</li>
+                    <li class="list-group-item">Gênero: {{artista.genero_musical}}</li>
+                    <li class="list-group-item">Classificação: {{'%0.2f'| format(Media|float)}}</li>
+                </ul> 
+                <div style="padding-top: 30px;">
+                    <a href="{{url_for('artista.editar',_id=artista.id)}}"><button class="btn btn-primary" ><i class="fas fa-edit"></i></button></a>
+                    <a href="{{url_for('artista.excluir',_id=artista.id)}}"><button class="btn btn-primary" ><i class="fa fa-minus-square"></i></button></a>
+                </span>
+                <h2 style="padding-top: 30px;">Albuns Produzidos: {{nAlbuns}}</h2>
+                 </div>
+                  
+            </div>
+            <div class="table-responsive">
+            <table class="table">
+            </div>
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Nome</th>
+                  <th scope="col">Ano</th>
+                  <th scope="col">genero_musical</th>
+                  <th scope="col">duração</th>
+                  <th scope="col">avaliacao</th>
+                  <th scope="col">formato</th>
+                  <th scope="col">Opcoes</th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for album in artista.albuns %}
+                  <tr>
+                    <th scope="row">{{album.id}}</th>
+                    <td><a href="{{url_for('album.perfil',_id=album.id)}}">{{album.nome}}</a></td>
+                    <td>{{album.ano}}</td>
+                    <td>{{album.genero_musical}}</td>
+                    <td>{{album.duracao}}</td>
+                    <td>{% set x = album.avaliacao %}{% for i in range(x) %}⭐{% endfor %}</td>
+                    <td>{{album.formato}}</td>
+                    <td><a href="{{url_for('album.editar',_id=album.id)}}"><i class="fas fa-edit"></i></a>
+                      <a href="{{url_for('album.excluir',_id=album.id)}}"><i class="fas fa-trash"></i></a>
+                    </td>
+                  </tr>
+              {% endfor %}
+                </tbody>
+              </table>
+        </div>
+        <!-- /.login-card-body -->
+    </div>
+
+</div>
+   
       
       
       
       
       {% endblock content %}
       <!-- <a href="{{url_for('album.associar_artista',_id=album.id)}}"><i class="fas fa-plus-square"></i></a> -->
+      
