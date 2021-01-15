@@ -21,7 +21,34 @@ def index():
         top5Num.append(maisAlbCad[i][0])
     
 
-    #query_melhorClassificacao = Artista.query.order_by(desc(Artista.media))
+
+
+    ############Maior Media################
+    TodosArtistas=Artista.query.all()
+
+    MediaTodos = [(0,0,0)] * len(TodosArtistas)
+
+
+    for i in range(len(TodosArtistas)):
+        soma=0
+        nalbuns=0
+        for j in range(len(TodosArtistas[i].albuns)):
+            nalbuns+=1
+            soma+=TodosArtistas[i].albuns[j].avaliacao
+        if nalbuns!=0:
+            MediaTodos[i]=(soma/nalbuns,nalbuns,i)
+
+        else:
+            MediaTodos[i]=(0,nalbuns,i)
+
+        
+    
+    MaiorMedias = sorted(MediaTodos, reverse=True) 
+    Media=MaiorMedias[0][0]
+    MaiorMedia = Artista.query.get(MaiorMedias[0][2])
+
+
+
 
     albuns = Album.query.order_by(Album.id.desc()).limit(5)
-    return render_template('index.html', albuns=albuns, artistas=top5, numeroDeCadastros=top5Num)
+    return render_template('index.html', albuns=albuns, artistas=top5, numeroDeCadastros=top5Num,MaiorMedia=MaiorMedia,Media=Media)

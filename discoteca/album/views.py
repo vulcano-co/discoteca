@@ -112,7 +112,7 @@ def associar_artista(_id):
         for album in artista_associado.albuns:
             somaNotas += album.avaliacao
 
-        artista_associado.media = somaNotas/nAlbuns
+      
         db.session.commit()
 
         return redirect(url_for('album.perfil',_id=album.id))

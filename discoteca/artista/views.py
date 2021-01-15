@@ -16,12 +16,12 @@ def cadastrar():
         pais = request.form['pais']
         genero_musical = request.form['genero_musical']
         img = request.form['img']
-        media = 0.0
+       
         
         artista = Artista(nome=nome,
                           pais=pais,
                           genero_musical=genero_musical,
-                          img=img,media=media)
+                          img=img)
         db.session.add(artista)
         db.session.commit()
 

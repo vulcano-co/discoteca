@@ -39,17 +39,18 @@ Discoteca - Home
     <div style="background-color: white;width: 100%;border-radius: 0.2rem;text-align: center;">
       <h2 style="background-color: #6d00a3;border-radius: 0.2rem;text-align: center;color: #ededed; margin-top: 15px;">Melhor média</h2>
       <div class="card">
-        <img src="https://img.r7.com/images/beatles-09042020104848946" class="card-img-top" alt="">
+        <img src="{{MaiorMedia.img}}" class="card-img-top" alt="">
         <div class="card-body">
-          <p class="card-text">{The Beatles}</p>
-          <p class="card-text">⭐⭐⭐⭐⭐</p>
-    </div>
-      
+          <p class="card-text">{{MaiorMedia.nome}}</p>
+          <p class="card-text">{{Media}}</p>
+          {% set x =(Media)|round|int   %}{% for i in range(x) %}⭐{% endfor %}
         </div>
+        
+      </div>
     </div>
-    </div>
-    <div class="col-sm">
-      <div class="tudo">
+  </div>
+  <div class="col-sm">
+    <div class="tudo">
       <h2 style="background-color: #6d00a3;border-radius: 0.2rem;text-align: center;color: #ededed;">Últimos cadastros</h2>
       <table class="table table-responsive">
         <thead>
@@ -72,11 +73,11 @@ Discoteca - Home
             
           </tr>
           {% endfor %}
-                    
+          
           
         </tbody>
       </table></div>
     </div>
-    </div>
   </div>
+</div>
 {% endblock content %}
