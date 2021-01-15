@@ -10,7 +10,7 @@ app.config['SECRET_KEY'] = "qualquercoisa"
 
 
 ##########################################
-############ BANCO DE DADOS ##############
+############ BANCO DE DADOS ###############
 ##########################################
 
 basedir = os.path.abspath(os.path.dirname(__file__))
