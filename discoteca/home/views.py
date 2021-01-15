@@ -43,9 +43,10 @@ def index():
 
         
     
-    MaiorMedias = sorted(MediaTodos, reverse=True) 
+    MaiorMedias = sorted(MediaTodos, reverse=True)
+    print(MaiorMedias) 
     Media=MaiorMedias[0][0]
-    MaiorMedia = Artista.query.get(MaiorMedias[0][2])
+    MaiorMedia = Artista.query.get(TodosArtistas[MaiorMedias[0][2]].id)
 
 
 

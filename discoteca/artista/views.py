@@ -36,8 +36,19 @@ def perfil(_id):
     
     artista_query = Artista.query.get_or_404(_id)
     nAlbuns = len(artista_query.albuns)
+
+
+    soma=0
+    for j in range(len(artista_query.albuns)):
+        nAlbuns+=1
+        soma+=artista_query.albuns[j].avaliacao
+    if nAlbuns!=0:
+        Media=soma/nAlbuns
+    else:
+        Media=0
+
     
-    return render_template('perfil_artista.html', artista=artista_query, nAlbuns=nAlbuns)
+    return render_template('perfil_artista.html', artista=artista_query, nAlbuns=nAlbuns, Media=Media)
 
 @artista.route('/editar/<_id>', methods=['GET','POST'])
 def editar(_id):
