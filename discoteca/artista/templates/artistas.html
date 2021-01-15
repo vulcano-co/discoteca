@@ -26,7 +26,7 @@ Discoteca-Artista
     <tbody>
       {% for artista in artistas %}
       <tr>
-        <th scope="row">{{artista.id}}</th>
+        <th scope="row">{{loop.index}}</th>
         <td>
           <img src="{% if artista.img %}{{artista.img}}{% else %}https://rlv.zcache.com.br/poster_icone_de_cantor_logotipo_karaoke-ra36fd3c510f849e4a54f2f0be43297fc_ixh_8byvr_540.jpg{% endif %}" alt="NULL IMG" style="height:80px; width: 80px; object-fit: cover;" >
         </td>

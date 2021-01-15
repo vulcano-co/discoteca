@@ -15,15 +15,16 @@ Discoteca - Home
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Foto</th>
+            <th scope="col"> </th>
             <th scope="col">Artista</th>
             <th scope="col">Albuns</th>
           </tr>
         </thead>
         <tbody>
+          
           {% for artista in artistas %}
           <tr>
-            <th scope="row">{{artista.id}}</th>
+            <th scope="row">{{loop.index}}</th> 
             <td><img src="{% if artista.img %}{{artista.img}}{% else %}https://rlv.zcache.com.br/poster_icone_de_cantor_logotipo_karaoke-ra36fd3c510f849e4a54f2f0be43297fc_ixh_8byvr_540.jpg{% endif %}" alt="NULL IMG" style="object-fit: cover; height: 80px; width: 80px;"></td>
             <td>{{artista.nome}}</td>
             <td>

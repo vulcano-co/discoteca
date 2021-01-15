@@ -22,13 +22,11 @@ def index():
     
 
 
-
-    ############Maior Media################
+    ###############################################
+    ####################Maior Media################
+    ###############################################
     TodosArtistas=Artista.query.all()
-
     MediaTodos = [(0,0,0)] * len(TodosArtistas)
-
-
     for i in range(len(TodosArtistas)):
         soma=0
         nalbuns=0
@@ -40,12 +38,12 @@ def index():
 
         else:
             MediaTodos[i]=(0,nalbuns,i)
-
-        
     
     MaiorMedias = sorted(MediaTodos, reverse=True)
     Media=MaiorMedias[0][0]
     MaiorMedia = Artista.query.get(TodosArtistas[MaiorMedias[0][2]].id)
+
+    ###################################################################
 
 
 

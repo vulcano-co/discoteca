@@ -106,11 +106,11 @@ def associar_artista(_id):
         artista_associado = Artista.query.get_or_404(id_artista)
         album.artistas.append(artista_associado)
 
-        nAlbuns = len(artista_associado.albuns) + 1
+        # nAlbuns = len(artista_associado.albuns) + 1
 
-        somaNotas = album.avaliacao
-        for album in artista_associado.albuns:
-            somaNotas += album.avaliacao
+        # somaNotas = album.avaliacao
+        # for album in artista_associado.albuns:
+        #     somaNotas += album.avaliacao
 
       
         db.session.commit()
@@ -118,3 +118,20 @@ def associar_artista(_id):
         return redirect(url_for('album.perfil',_id=album.id))
 
     return render_template('associar_artista.html', album=album, artistas=artistas)
+
+
+
+@album.route('/desassociar/<_id>-<_idAr>', methods=['GET','POST'])
+def desassociar(_id,_idAr):
+    album = Album.query.get_or_404(_id)
+    artista = Artista.query.get_or_404(_idAr)
+    if request.method == 'POST':
+        for i in range(len(artista.albuns)):
+            if album.id == artista.albuns[i].id:
+                del(artista.albuns[i])
+                break
+        
+        db.session.commit()        
+        return redirect(url_for('album.index'))
+    
+    return render_template('desassociar_album.html', album=album, artista=artista)
