@@ -24,16 +24,15 @@ Perfil - {{artista.nome}}
                     <li class="list-group-item">Pais: {{artista.pais}}</li>
                     <li class="list-group-item">Gênero: {{artista.genero_musical}}</li>
                     <li class="list-group-item">Classificação: {{'%0.2f'| format(Media|float)}}</li>
+                    <li class="list-group-item">Albuns Produzidos: {{nAlbuns}}</li>
                 </ul> 
                 <div style="padding-top: 30px;">
                     <a href="{{url_for('artista.editar',_id=artista.id)}}"><button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar artista" ><i class="fas fa-edit"></i></button></a>
                     <a href="{{url_for('artista.excluir',_id=artista.id)}}"><button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Excluir artista" ><i class="fa fa-trash"></i></button></a>
-                </span>
-                <h2 style="padding-top: 30px;">Albuns Produzidos: {{nAlbuns}}</h2>
                  </div>
                   
             </div>
-            <div class="table-responsive">
+            <div class="table-responsive" style="padding-top: 30px;">
             <table class="table">
             </div>
               <thead>
