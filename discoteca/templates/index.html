@@ -73,7 +73,7 @@ Discoteca - Home
               
             </td>
             <td><a href="{{url_for('album.perfil',_id=album.id)}}">{{album.nome}}</a></td>
-            <td>{% if album.artistas %} {{album.artistas[0].nome}} {% else %}--{% endif%}</td>
+            <td>{% if album.artistas %}<a href="{{url_for('artista.perfil',_id=album.artistas[0].id)}}">{{album.artistas[0].nome}}</a>{% else %}--{% endif%}</td>
             <td>{% set x = album.avaliacao %}{% for i in range(x) %}⭐{% endfor %}</td>
             <td>{{album.formato}}</td>
             

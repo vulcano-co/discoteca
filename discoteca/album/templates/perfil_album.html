@@ -22,7 +22,12 @@ Album - {{album.nome}}
                             </div>
                             <div class="col-sm">                         
                             <ul id="info" style="color: #4f4f4f;" class="list-group">
-                                <li class="list-group-item">Autoria: {%if album.artistas%}{%for artista in album.artistas%}<a href="{{url_for('artista.perfil',_id=artista.id)}}">{{artista.nome}}</a> {%endfor%}{%else%}--{%endif%}</li>
+                                <li class="list-group-item">
+                                    
+                                    Autoria: {%if album.artistas%}{%for artista in album.artistas%}<a href="{{url_for('artista.perfil',_id=artista.id)}}">{{artista.nome}}</a><br>{%endfor%}{%else%}--{%endif%}
+                                    
+
+                                </li>
                                 <li class="list-group-item">Lançado em {{album.ano}}</li>
                                 <li class="list-group-item">Gênero: {{album.genero_musical}}</li>
                                 <li class="list-group-item">Idioma: {{album.idioma}}</li>

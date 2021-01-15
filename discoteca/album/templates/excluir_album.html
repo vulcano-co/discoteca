@@ -5,7 +5,7 @@ Excluir {{album.nome}}
 {% endblock title %}
 
 {% block content %}
-<h1>Excluir o album {{album.nome}}?</h1>
+<h2>Excluir o álbum {{album.nome}}?</h2>
 <form action="" method='POST'>
     <input type="submit" value="SIM!" class="btn btn-danger btn-lg btn-block">
     <a href="{{url_for('album.index')}}" class="btn btn-secondary btn-lg btn-block">NÃO!</a>   

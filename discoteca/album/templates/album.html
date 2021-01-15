@@ -56,7 +56,7 @@ Discoteca-Artista
         </a></td>
         <td><a href="{{url_for('album.perfil',_id=album.id)}}">{{album.nome}}</a></td>
         <td>{{album.ano}}</td>
-        <td>{%if album.artistas%}{%for artista in album.artistas%}<a href="{{url_for('artista.perfil',_id=artista.id)}}">{{artista.nome}}</a>{%endfor%}{%else%}--{%endif%}</td>
+        <td>{%if album.artistas%}{%for artista in album.artistas%}<a href="{{url_for('artista.perfil',_id=artista.id)}}">{{artista.nome}}</a><br>{%endfor%}{%else%}--{%endif%}</td>
         <td>{{album.genero_musical}}</td>
         <td>{{album.duracao}}</td>
         <td>{% set x = album.avaliacao %}{% for i in range(x) %}⭐{% endfor %}</td>

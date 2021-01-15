@@ -28,7 +28,7 @@ Discoteca-Artista
       <tr>
         <th scope="row">{{loop.index}}</th>
         <td>
-          <img src="{{artista.img}}" onerror="this.onerror=null; this.src='https://4.bp.blogspot.com/-pE1KnIFm1nw/V1hcHnTYSrI/AAAAAAAADfU/Ofzp2yeXRaIbxY-WRhrSOt2RNI4--KsHQCLcB/s1600/karaoke-160752_1280.png'" alt="NULL IMG" style="height:80px; width: 80px; object-fit: cover;" >
+          <a href="{{url_for('artista.perfil',_id=artista.id)}}"><img src="{{artista.img}}" onerror="this.onerror=null; this.src='https://4.bp.blogspot.com/-pE1KnIFm1nw/V1hcHnTYSrI/AAAAAAAADfU/Ofzp2yeXRaIbxY-WRhrSOt2RNI4--KsHQCLcB/s1600/karaoke-160752_1280.png'" alt="NULL IMG" style="height:80px; width: 80px; object-fit: cover;" ></a>
         </td>
         <td><a href="{{url_for('artista.perfil',_id=artista.id)}}">{{artista.nome}}</a></td>
         <td>{{artista.pais}}</td>
