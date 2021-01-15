@@ -18,7 +18,7 @@ Album - {{album.nome}}
                     <div class="card-body">
                         <div class="row" style="margin: auto; text-align: center; padding: 8px 20px;">
                             <div class="col-sm">
-                             <img src="{% if album.img %}{{album.img}}{% else %}https://cdn.onlinewebfonts.com/svg/img_515447.png{% endif %}" alt="NULL IMG" style="width: 100%; max-width: 400px;">
+                             <img src="{% if album.img %}{{album.img}}{% else %}https://cdn.onlinewebfonts.com/svg/img_515447.png{% endif %}" onerror="this.onerror=null; this.src='https://cdn.onlinewebfonts.com/svg/img_515447.png'" alt="NULL_IMG" style="width: 100%; max-width: 400px;">
                             </div>
                             <div class="col-sm">                         
                             <ul id="info" style="color: #4f4f4f;" class="list-group">
@@ -31,9 +31,9 @@ Album - {{album.nome}}
                                 <li class="list-group-item">Avaliação: {% set x = album.avaliacao %}{% for i in range(x) %}⭐{% endfor %}</li>
                             </ul> 
                             <div style="padding-top: 30px;">
-                                <a href="{{url_for('album.editar',_id=album.id)}}"><button class="btn btn-primary" ><i class="fas fa-edit"></i></button></a>
-                                <a href="{{url_for('album.excluir',_id=album.id)}}"><button class="btn btn-primary" ><i class="fa fa-minus-square"></i></button></a>
-                                <a href="{{url_for('album.associar_artista',_id=album.id)}}"><button class="btn btn-primary" ><i class="fa fa-plus-square"></i></button></a>
+                                <a href="{{url_for('album.editar',_id=album.id)}}"><button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar álbum" ><i class="fas fa-edit"></i></button></a>
+                                <a href="{{url_for('album.excluir',_id=album.id)}}"><button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Excluir álbum" ><i class="fa fa-trash"></i></button></a>
+                                <a href="{{url_for('album.associar_artista',_id=album.id)}}"><button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Associar a artista" ><i class="fa fa-link" aria-hidden="true"></i></button></a>
                             </div>
                              </div> 
                         </div>

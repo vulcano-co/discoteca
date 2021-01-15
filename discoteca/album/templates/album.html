@@ -51,7 +51,7 @@ Discoteca-Artista
       {% for album in albuns %}
       <tr>
         <th scope="row">{{loop.index}}</th>
-        <td><img src="{% if album.img %}{{album.img}}{% else %}https://cdn.onlinewebfonts.com/svg/img_515447.png{% endif %}" alt="NULL IMG"  style="border-radius: 0.2rem; object-fit: cover; height: 80px; width: 80px;"></td>
+        <td><img src="{% if album.img %}{{album.img}}{% else %}https://cdn.onlinewebfonts.com/svg/img_515447.png{% endif %}" alt="NULL IMG" onerror="this.onerror=null; this.src='https://cdn.onlinewebfonts.com/svg/img_515447.png'"  style="border-radius: 0.2rem; object-fit: cover; height: 80px; width: 80px;"></td>
         <td><a href="{{url_for('album.perfil',_id=album.id)}}">{{album.nome}}</a></td>
         <td>{{album.ano}}</td>
         <td>{%if album.artistas%}{%for artista in album.artistas%}{{artista.nome}} {%endfor%}{%else%}--{%endif%}</td>

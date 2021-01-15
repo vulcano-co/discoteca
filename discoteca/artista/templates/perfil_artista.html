@@ -17,7 +17,7 @@ Perfil - {{artista.nome}}
         <div class="card-body">
             <div class="row" style="margin: auto; text-align: center; padding: 8px 20px;">
                 <div class="col-sm">
-                 <img src="{% if artista.img %}{{artista.img}}{% else %}https://rlv.zcache.com.br/poster_icone_de_cantor_logotipo_karaoke-ra36fd3c510f849e4a54f2f0be43297fc_ixh_8byvr_540.jpg{% endif %}" alt="NULL IMG" style="width: 100%; max-width: 400px;">
+                 <img src="{{artista.img}}" onerror="this.onerror=null; this.src='https://4.bp.blogspot.com/-pE1KnIFm1nw/V1hcHnTYSrI/AAAAAAAADfU/Ofzp2yeXRaIbxY-WRhrSOt2RNI4--KsHQCLcB/s1600/karaoke-160752_1280.png'" alt="NULL IMG" style="width: 100%; max-width: 400px;">
                 </div>
                 <div class="col-sm">                         
                 <ul id="info" style="color: #4f4f4f;" class="list-group">
@@ -26,8 +26,8 @@ Perfil - {{artista.nome}}
                     <li class="list-group-item">Classificação: {{'%0.2f'| format(Media|float)}}</li>
                 </ul> 
                 <div style="padding-top: 30px;">
-                    <a href="{{url_for('artista.editar',_id=artista.id)}}"><button class="btn btn-primary" ><i class="fas fa-edit"></i></button></a>
-                    <a href="{{url_for('artista.excluir',_id=artista.id)}}"><button class="btn btn-primary" ><i class="fa fa-minus-square"></i></button></a>
+                    <a href="{{url_for('artista.editar',_id=artista.id)}}"><button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar artista" ><i class="fas fa-edit"></i></button></a>
+                    <a href="{{url_for('artista.excluir',_id=artista.id)}}"><button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Excluir artista" ><i class="fa fa-trash"></i></button></a>
                 </span>
                 <h2 style="padding-top: 30px;">Albuns Produzidos: {{nAlbuns}}</h2>
                  </div>
@@ -59,9 +59,7 @@ Perfil - {{artista.nome}}
                     <td>{% set x = album.avaliacao %}{% for i in range(x) %}⭐{% endfor %}</td>
                     <td>{{album.formato}}</td>
                     <td>
-                      <a href="{{url_for('album.editar',_id=album.id)}}"><i class="fas fa-edit"></i></a>
-                      <a href="{{url_for('album.desassociar',_id=album.id, _idAr=artista.id)}}"><i class="fa fa-minus-square"></i></a>
-                      <a href="{{url_for('album.excluir',_id=album.id)}}"><i class="fas fa-trash"></i></a>
+                      <a href="{{url_for('album.desassociar',_id=album.id, _idAr=artista.id)}}" data-toggle="tooltip" data-placement="top" title="Desassociar álbum"><i class="fa fa-minus-square"></i></a>
                     </td>
                   </tr>
               {% endfor %}

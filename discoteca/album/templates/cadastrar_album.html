@@ -14,7 +14,7 @@ Cadastrar Album
         <input type="text" name="nome" id="nome" class="form-control" placeholder="Thriller" required=>
         <br>
         <label for="ano">Ano de Lançamento:</label>
-        <input type="number" name="ano" id="ano" class="form-control" placeholder="2020" required=>
+        <input type="number" name="ano" id="ano" class="form-control" placeholder="2020" min="1" required=>
         <br>
         <label for="img">Imagem:</label>
         <input type="text" name="img" id="img" class="form-control" placeholder="link" >
@@ -32,7 +32,7 @@ Cadastrar Album
         <input type="text" name="formato" id="formato" class="form-control" placeholder="Vinil" required=>
         <br>
         <label for="avaliacao">Avaliação:</label>
-        <input type="number" name="avaliacao" id="avaliacao" class="form-control" placeholder="5" required=>
+        <input type="number" name="avaliacao" id="avaliacao" class="form-control" placeholder="5" max="5" min="1" required=>
         <br>
         <input type="submit" value="Cadastrar!" class="btn btn-primary">
     </form>
