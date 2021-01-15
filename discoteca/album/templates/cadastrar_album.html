@@ -11,7 +11,7 @@ Cadastrar Album
 ">
     <form action="" method="POST">
         <label for="nome">Nome do Album:</label>
-        <input type="text" name="nome" id="nome" class="form-control" placeholder="Thriller" required=>
+        <input type="text" name="nome" minlength="1" id="nome" class="form-control" placeholder="Thriller" required=>
         <br>
         <label for="ano">Ano de Lançamento:</label>
         <input type="number" name="ano" id="ano" class="form-control" placeholder="2020" min="1" required=>
@@ -20,7 +20,7 @@ Cadastrar Album
         <input type="text" name="img" id="img" class="form-control" placeholder="link" >
         <br>
         <label for="duracao">Duração:</label>
-        <input type="time" step='1'  max="20:00:00" name="duracao" id="duracao" class="form-control" placeholder="3:00" >
+        <input type="time" step='1' value="00:00:00" min="00:00:01" max="20:00:00" name="duracao" id="duracao" class="form-control" required=>
         <br>
         <label for="genero_musical">Gênero</label>
         <input type="text" name="genero_musical" id="genero_musical" class="form-control" placeholder="Rock" required=>
