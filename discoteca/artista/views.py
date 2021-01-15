@@ -40,7 +40,6 @@ def perfil(_id):
 
     soma=0
     for j in range(len(artista_query.albuns)):
-        nAlbuns+=1
         soma+=artista_query.albuns[j].avaliacao
     if nAlbuns!=0:
         Media=soma/nAlbuns
